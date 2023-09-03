@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Placement Predictor</title>
+    <style>
+        /* Apply styles to the entire body */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+h1 {
+    color: #333;
+}
+
+/* Style the form container */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style form labels and input fields */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="number"],
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Center the form on the page */
+@media (max-width: 500px) {
+    form {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Campus Placement Predictor</h1>
+    
+    <form action="/predict" method="post">
+        <label for="ssc_p">SSC Percentage:</label>
+        <input type="number" name="ssc_p" step="0.01" required><br><br>
+
+        <label for="hsc_p">HSC Percentage:</label>
+        <input type="number" name="hsc_p" step="0.01" required><br><br>
+
+        <label for="degree_p">Degree Percentage:</label>
+        <input type="number" name="degree_p" step="0.01" required><br><br>
+
+        <label for="work_experience">Work Experience:</label>
+        <select name="work_experience" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label for="specialization">MBA Specialization:</label>
+        <input type="text" name="specialization" required><br><br>
+
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
